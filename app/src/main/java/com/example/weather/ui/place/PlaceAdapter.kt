@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
 import com.example.weather.WeatherActivity
 import com.example.weather.logic.model.Place
+import kotlinx.android.synthetic.main.activity_weather.*
 
 //传入fragment对象（显示的上下文）和place数组（显示的数据源）
 class PlaceAdapter(private val fragment: Fragment,private val placeList:List<Place>)
@@ -32,15 +33,36 @@ class PlaceAdapter(private val fragment: Fragment,private val placeList:List<Pla
             val position=holder.adapterPosition
             //根据下标从地址数组中找出该地址的信息
             val place=placeList[position]
-            //创建意图，当发生点击事件是，跳转到天气信息显示界面
-            val intent=Intent(parent.context,WeatherActivity::class.java).apply {
-                putExtra("center",place.center)
-                putExtra("placeName",place.name)
-                Log.i("weatherTest","${place.center}")
-                Log.i("weatherTest","${place.name}")
+
+            //获取当前fragment的activity
+            val activity=fragment.activity
+            if (activity is WeatherActivity){
+                //如果是天气显示界面，不进行跳转，只刷新数据
+                Log.i("weatherTest","----on WeatherActivity----")
+                //因为发生了点击事件，已经有结果，不需要搜索侧边栏，故而关闭侧边栏
+                activity.drawerLayout.closeDrawers()
+
+                //更新数据持有者的信息
+                activity.viewModel.center=place.center
+                activity.viewModel.placename=place.name
+
+                //刷新天气界面
+                activity.viewModel.refreshWeather(place.center)
             }
-            Log.i("weatherTest","----open WeatherActivity----")
-            fragment.startActivity(intent)
+            else{
+                //如果是搜索界面，创建意图，当发生点击事件时，跳转到天气信息显示界面
+                val intent=Intent(parent.context,WeatherActivity::class.java).apply {
+                    putExtra("center",place.center)
+                    putExtra("placeName",place.name)
+                    Log.i("weatherTest","${place.center}")
+                    Log.i("weatherTest","${place.name}")
+                }
+                Log.i("weatherTest","----open WeatherActivity----")
+                fragment.startActivity(intent)
+                //结束搜索界面生命
+                activity?.finish()
+            }
+
         }
         return holder
     }

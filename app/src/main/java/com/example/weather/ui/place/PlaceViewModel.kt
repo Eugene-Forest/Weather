@@ -10,6 +10,8 @@ import com.example.weather.logic.model.Place
 
 class PlaceViewModel:ViewModel() {
 
+
+
     val nameLiveData=MutableLiveData<String>()
 
     //添加对搜索名的监视，当改变时，调用并返回值LiveData<List<Place>>

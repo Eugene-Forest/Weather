@@ -12,7 +12,8 @@ interface WeatherService {
     @GET("v2.5/${SunnyWeatherApplication.Token}/{center}/realtime.json")
     fun searchRealtimeWeatherInfo(@Path("center") center:String): Call<RealtimeWeatherInfo>
 
-    @GET("v2.5/${SunnyWeatherApplication.Token}/{center}/daily.json")
+    @GET("v2.5/${SunnyWeatherApplication.Token}/{center}/daily.json?" +
+            "dailysteps=15&hourlysteps=360")
     fun searchDailyWeatherInfo(@Path("center") center:String): Call<DailyWeatherInfo>
 
 }

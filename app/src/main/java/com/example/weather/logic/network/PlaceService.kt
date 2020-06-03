@@ -14,4 +14,5 @@ interface PlaceService {
     @GET("v3/config/district?key=${SunnyWeatherApplication.key}" +
             "&subdistrict=0&extensions=base&offset=10")
     fun searchPlace(@Query("keywords") query: String): Call<PlaceResponse>
+
 }

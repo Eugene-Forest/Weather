@@ -8,6 +8,7 @@ import com.example.weather.logic.Repository
 
 class WeatherViewModel :ViewModel(){
 
+    //定义一个储存当前显示的城市信息，为刷新天气信息而准备
     var center=""
     var placename=""
 

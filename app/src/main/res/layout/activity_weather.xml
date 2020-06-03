@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:id="@+id/weatherLayout"
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawerLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
-    android:visibility="invisible"
-    android:overScrollMode="never"
     >
-    <LinearLayout
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <include layout="@layout/now"></include>
-        <include layout="@layout/forecast"></include>
-        <include layout="@layout/life_index"></include>
-    </LinearLayout>
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/weatherLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:visibility="invisible"
+            android:overScrollMode="never">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <include layout="@layout/now"></include>
+                <include layout="@layout/forecast"></include>
+                <include layout="@layout/life_index"></include>
+                <include layout="@layout/activity_start"></include>
+            </LinearLayout>
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        <fragment
+            android:id="@+id/placeFragment"
+            android:name="com.example.weather.ui.place.PlaceFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            ></fragment>
 
-</ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

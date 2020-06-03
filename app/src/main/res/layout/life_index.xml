@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:text="生活指数"
             android:textSize="20sp"
             android:textColor="?android:textColorPrimary"
@@ -24,11 +25,13 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             >
             <TableRow>
                 <RelativeLayout
                     android:layout_column="0"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_margin="10dp">
                     <ImageView
                         android:id="@+id/coldRiskImg"
                         android:layout_width="wrap_content"
@@ -63,7 +66,8 @@
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_column="1"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_margin="10dp">
                     <ImageView
                         android:id="@+id/dressingImg"
                         android:layout_width="wrap_content"
@@ -100,7 +104,8 @@
             <TableRow>
                 <RelativeLayout
                     android:layout_column="0"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_margin="10dp">
                     <ImageView
                         android:id="@+id/ultravioletImg"
                         android:layout_width="wrap_content"
@@ -135,7 +140,8 @@
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_column="1"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_margin="10dp">
                     <ImageView
                         android:id="@+id/carWashingImg"
                         android:layout_width="wrap_content"
