@@ -3,7 +3,6 @@
 该app是一个简易的天气查询软件，实现了在中国范围内的地级行政地区的天气查询功能。
 
 
-
 ## 密匙须知
 
 在 com.example.weather目录下，有文件名为 SunnyWeatherApplication.kt ,该文件为API密匙定义文件。
@@ -22,6 +21,12 @@ const val key="xxxxxxxxxxxxxxx"
 以上都是可获取的免费。如何获取自行搜索。
 
 
-## 运行视频
 
-在项目文件中，Weather_example.mp4为演示视频。
+## 调试版本apk
+
+在项目文件中，Weather_debug.apk为调试版本apk。运行效果如下图：
+
+![avatar](./weather_demo1.png)
+
+![avatar](./weather_demo2.png)
+
