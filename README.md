@@ -21,3 +21,6 @@ const val key="xxxxxxxxxxxxxxx"
 
 以上都是可获取的免费。如何获取自行搜索。
 
+<video id="video" controls="" preload="none">
+<source id="mp4" src="./Weather_example.mp2" type="video/mp4">
+</video>
