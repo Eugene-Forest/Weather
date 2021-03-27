@@ -4,16 +4,16 @@
 
 
 
-# 密匙须知
+## 密匙须知
 
 在 com.example.weather目录下，有文件名为 SunnyWeatherApplication.kt ,该文件为API密匙定义文件。
 
-# 彩云科技天气API密匙
+### 彩云科技天气API密匙
 const val Token="xxxxxxxxxx"
-# 高德 Web服务 API密匙
+### 高德 Web服务 API密匙
 const val key="xxxxxxxxxxxxxxx"
 
-# 密匙获取
+## 密匙获取
 
 彩云科技官网 http://www.caiyun.org/
 
@@ -21,6 +21,7 @@ const val key="xxxxxxxxxxxxxxx"
 
 以上都是可获取的免费。如何获取自行搜索。
 
-<video id="video" controls="" preload="none">
-<source id="mp4" src="./Weather_example.mp2" type="video/mp4">
-</video>
+
+## 运行视频
+
+在项目文件中，Weather_example.mp4为演示视频。
